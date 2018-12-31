@@ -14,24 +14,24 @@
 <script type="text/javascript">
 
 $(function(){
-
-	var url = 'http://www.texashillcountry.com';
-	var apiUrl = 'https://graph.facebook.com/?ids='+url;
-
- 	$.ajax({url: apiUrl, success: function(result){
-
-        $.each( result, function( key, val ) {
-
+ 
+ var url = 'http://www.texashillcountry.com';
+ var apiUrl = 'https://graph.facebook.com/?ids='+url;
+ 
+ $.ajax({url: apiUrl, success: function(result){
+ 
+        $.each( result, function( key, val ) 
+        {
+ 
         	console.log(key + ' - ' + val['share']['share_count']);
-
+ 
         	var shareCount = val['share']['share_count'];
         	
         	$("#fb-like-div").html(shareCount);
-
-  		});
-
+ 
+   		});
+ 
     }});
-
 });
 
 </script>
